@@ -1,0 +1,12 @@
+## Your Project Answers
+
+### Project Description
+
+For our project, we would like to make a game that uses motion sensors and LEDs to test reaction times and possibly use the system to make the user dance. For the reaction time test, we will have a motion sensor paired with an LED, and the LEDs will turn on randomly, and a player will be awarded a score based on how long since the LED was toggled on. When a player triggers a sensor with the LED on, they will be awarded points based on how recently the light turned on. If they miss the LED while it is on (it will turn off after a set amount of time), or activate a motion sensor whose light isn't on, they will be deducted points. This score will be displayed on either the 7-segment display on the board, or in a text window on a computer. We will use one of the buttons on the board as a start/end button, and have the game run for a set amount of time. For additional future functionality, we can add music functionality and an intermediate warning light that indicates to the user that its corresponding light will need to be waved at for the next part of the "dance". Then, we will have the lights match with the music that will be playing off of a computer that the board is plugged into. 
+### Technical Approach
+
+For peripherals, we plan to use passive infrared (PIR) sensors to detect when a user has waved their hands in front of a light that is on or off. Each time the sensors detect motion, they will generate an interrupt, and we will have an interrupt handler that will determine if the player should be awarded points or have points removed from them based on the state of the light. For determining when lights should be turned on, we will use the PIT on the board to generate interrupts to turn on lights at regular intervals and turn a random light on every time. For starting and ending a game early, we will use the button on the board, and for displaying information about the score/state of the game on the 7-segment display. If we decide to try and implement the communication with a computer for displaying scores and playing music, we will have to implement a UART communication protocol with the board to communicate with our computers. 
+## Your page
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/dcm288-jmh469-sq86/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/dcm288-jmh469-sq86/).
+
+You can edit your page in the gh-page branch of this repo.
